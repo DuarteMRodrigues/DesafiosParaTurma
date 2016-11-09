@@ -41,25 +41,19 @@ public class Desafios {
 		}
 		
 		while(contador < 5){
-			if(verificacao[0] == -1){
-				Random r = new Random();
-				ordem = r.nextInt(5);
-				verificacao[0] = ordem;
-			}
-			else{
-				Random r = new Random();
-				ordem = r.nextInt(5);
-				verificacao[contador] = ordem;
-				for(int i=0; i<5; i++){
-					if (verificacao[i] == ordem){
-						if(i!=contador){
-							ordem = r.nextInt(5);
-							verificacao[contador] = ordem;
-							i=-1;
-						}
+			Random r = new Random();
+			ordem = r.nextInt(5);
+			verificacao[contador] = ordem;
+			for(int i=0; i<5; i++){
+				if (verificacao[i] == ordem){
+					if(i!=contador){
+						ordem = r.nextInt(5);
+						verificacao[contador] = ordem;
+						i=-1;
 					}
 				}
 			}
+			
 			System.out.println("mensagem " + (contador + 1) + ": " + mensagens[ordem]);
 			contador++;
 		}
